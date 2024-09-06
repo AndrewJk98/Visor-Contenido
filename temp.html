@@ -1,0 +1,348 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            overflow-x: auto;
+        }
+
+        .container-full {
+            grid-column: span 3;
+        }
+
+        .component {
+            background-color: #23519d;
+            padding: 20px;
+            border-radius: 30px;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .component img {
+            max-width: 80%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        .component h3 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .component:hover {
+            transform: scale(1.05);
+            background-color: #1b3f76;
+        }
+
+        .boton-cerrar {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 50%;
+            width: 1.8rem;
+            height: 1.8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+
+            right: 10px;
+        }
+
+        .boton-cerrar svg {
+            fill: #fff;
+        }
+
+        .boton-cerrar:hover {
+            background-color: #171b2e;
+        }
+
+        @media (max-width: 800px) {
+            .container-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .container-full {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .container-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container-full {
+                grid-column: span 1;
+            }
+        }
+
+        #subPeruEduca,
+        #subBiblioteca {
+            .component img {
+                min-height: 45px;
+                min-width: 5rem
+            }
+        }
+
+        /* #buscador_container {
+            background-color: #23519d;
+            padding: 20px;
+            border-radius: 30px;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        } */
+
+        /* #buscador_container:hover {
+            transform: scale(1.02);
+        } */
+
+        .pantalla_responsive {
+            height: auto !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="body-container">
+        <!-- SUB MENU DE PERUEDUCA -->
+        <div id="subPeruEduca" class="container-full"
+            style="background-color: #23519d; padding: 1.2rem; border-radius: 30px; display: none;">
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; padding-inline: 2%; position: relative;">
+                <h2 style="color: white; margin: 0;">EBR contenidos PERÚ EDUCA</h2>
+                <button class="boton-cerrar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-x"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                    </svg>
+                </button>
+            </div>
+            <div class="container-grid" style="grid-template-columns: repeat(4, 1fr);">
+                <a href="/content/62029f14e1ab760029dbe63a" class="component" style="background-color: #748cd4;">
+                    <img src="/contents/b1b2543/.thumbnail-b28428" alt="Aprendo en casa Minedu">
+                    <h3>Aprendo en casa</h3>
+                </a>
+                <a href="/content/65eb36e469b28a777cd1edc6" class="component" style="background-color: #748cd4;">
+                    <img src="/contents/00-perueduca-inicial/.thumbnail-b4a465" alt="EBR Nivel Inicial">
+                    <h3>EBR Nivel Inicial</h3>
+                </a>
+                <a href="/content/64dba60a1f148d296ac73560" class="component" style="background-color: #748cd4;">
+                    <img src="/contents/00-perueduca-primaria/.thumbnail-571b5e" alt="EBR Nivel Primaria">
+                    <h3>EBR Nivel Primaria</h3>
+                </a>
+                <a href="/content/64dbb25b1f148d296ac73a24" class="component" style="background-color: #748cd4;">
+                    <img src="/contents/00-perueduca-secundaria/.thumbnail-3da3d9" alt="EBR Nivel Secundaria">
+                    <h3>EBR Nivel Secundaria</h3>
+                </a>
+            </div>
+        </div>
+
+        <!-- SUB MENÚ DE BIBLIO -->
+        <div id="subBiblioteca" class="container-full"
+            style="background-color: #2e8b57; padding: 1.2rem; border-radius: 30px; display: none;">
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; padding-inline: 2%; position: relative;">
+                <h2 style="color: white; margin: 0;">Biblioteca Digital</h2>
+                <button class="boton-cerrar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-x"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                    </svg>
+                </button>
+            </div>
+            <div class="container-grid" style="grid-template-columns: repeat(5, 1fr);">
+                <a href="/content/660b0f2ec5556ae83da389f2" class="component" style="background-color: #7eb596;">
+                    <img src="/contents/da84f24/667ef4253a879e2e5ec6aa7b/.thumbnail-e30.png" alt="Lecturas resumidas">
+                    <h3>Lecturas resumidas</h3>
+                </a>
+                <a href="/content/622426ff66ac932f81684861" class="component" style="background-color: #7eb596;">
+                    <img src="/contents/da84f24/667f0b883a879e2e5ec6b646/.thumbnail-0e1.png" alt="Fuente Online">
+                    <h3>Fuente Online</h3>
+                </a>
+                <a href="/content/667f153e3a879e2e5ec6bbb2" class="component" style="background-color: #7eb596;">
+                    <img src="/contents/da84f24/667f1f913a879e2e5ec6c023/.thumbnail-8f8.png" alt="EBR">
+                    <h3>Educación Básica Regular</h3>
+                </a>
+                <a href="/content/622e15c1b012653034ae8d71" class="component" style="background-color: #7eb596;">
+                    <img src="/contents/da84f24/667ef4243a879e2e5ec6aa72/.thumbnail-9e9.png" alt="Tutoriales">
+                    <h3>Tutoriales</h3>
+                </a>
+                <a href="/content/664f7107208a41004f65af04" class="component" style="background-color: #7eb596;">
+                    <img src="/contents/da84f24/667ef4243a879e2e5ec6aa78/.thumbnail-f54.png" alt="Dominio Público">
+                    <h3>Dominio Público</h3>
+                </a>
+            </div>
+        </div>
+        <div id="mainMaterials" class="container-grid">
+            <a id="educacion-perueduca" class="component" style="background-color: #23519D; cursor: pointer;">
+                <img style="background-color:white;" src="/contents/da84f24/664fa44e208a41004f65be52/PeruEduca-EBR.png"
+                    alt="EBR contenidos PERU EDUCA">
+                <h3>EBR contenidos PERÚ EDUCA</h3>
+            </a>
+            <a href="/content/66390944d9d6edbb4c0f3afa" class="component" style="background-color: #9C0720;">
+                <img style="background-color:white;"
+                    src="/contents/da84f24/664fa44f208a41004f65be55/Experiencia-Aprendizaje.png"
+                    alt="Experiencia de Aprendizaje">
+                <h3>Experiencia de Aprendizaje</h3>
+            </a>
+            <a id="biblioteca-digital" class="component" style="background-color: #2E8B57; cursor: pointer;">
+                <img style="background-color:white;"
+                    src="/contents/da84f24/664fa44d208a41004f65be49/Biblioteca-digital.png" alt="Biblioteca digital">
+                <h3>Biblioteca digital</h3>
+            </a>
+
+            <a href="/content/62c11f7fc85ef400407f047e" class="component" style="background-color: #ED1C24;">
+                <img style="background-color:white;"
+                    src="/contents/da84f24/664fa44e208a41004f65be4f/Educacion-Trabajo.png"
+                    alt="Educación para el trabajo">
+                <h3>Educación para el trabajo</h3>
+            </a>
+            <a href="/content/648e778a51dd415852b24eab" class="component" style="background-color: #0B464E;">
+                <img src="/contents/da84f24/664fa44e208a41004f65be4c/Evaluacion-expertos.png"
+                    alt="Evaluación de expertos">
+                <h3>Evaluación de expertos</h3>
+            </a>
+            <a href="/content/641788b462a3b00056384277" class="component" style="background-color: #FF8C00;">
+                <img style="background-color:white;" src="/contents/da84f24/664fa44f208a41004f65be58/.thumbnail-1c3.png"
+                    alt="Simuladores STEM">
+                <h3>Simuladores STEM</h3>
+            </a>
+        </div>
+
+    </div>
+
+    <script>
+        if (typeof body_container === "undefined") {
+            let body_container = document.getElementById("body-container")
+            for (let i = 0; i < 4; i++) { // Sube cinco niveles en el árbol del DOM
+                if (body_container.parentNode) {
+                    body_container = body_container.parentNode;
+                } else {
+                    console.log("No hay suficientes nodos padres");
+                }
+            }
+            body_container.style.minHeight = "auto";
+            body_container.style.height = "auto";
+        }
+        else {
+            for (let i = 0; i < 4; i++) { // Sube cinco niveles en el árbol del DOM
+                if (body_container.parentNode) {
+                    body_container = body_container.parentNode;
+                } else {
+                    console.log("No hay suficientes nodos padres");
+                }
+            }
+            // Verifica si el div encontrado tiene las clases 'sc-cPrPEB' y 'bnxHlX'
+            body_container.style.minHeight = "auto";
+            body_container.style.height = "auto";
+        }
+
+        function ajustarAltura() {
+            let body_c;
+            if (typeof body_c === "undefined") {
+
+                let body_c = document.getElementById("body-container")
+
+                for (let i = 0; i < 2; i++) { // sube 2 niveles en el árbol del DOM
+                    if (body_c.parentNode) {
+                        body_c = body_c.parentNode;
+                    } else {
+                        console.log("No hay suficientes nodos padres");
+                    }
+                }
+
+                if (window.innerWidth <= 768) {
+                    body_c.classList.add("pantalla_responsive");
+                }
+            }
+            else {
+                for (let i = 0; i < 2; i++) { // sube 2 niveles en el árbol del DOM
+                    if (body_c.parentNode) {
+                        body_c = body_c.parentNode;
+                    } else {
+                        console.log("No hay suficientes nodos padres");
+                    }
+
+                }
+                if (window.innerWidth <= 768) {
+                    body_c.classList.add("pantalla_responsive");
+                }
+            }
+
+        }
+
+        // Ejecutar la función al cargar la página
+        window.onload = ajustarAltura();
+
+        // Ejecutar la función cada vez que se redimensiona la ventana
+        window.onresize = ajustarAltura;
+
+        document.getElementById("educacion-perueduca").addEventListener("click", function () {
+            let spe = document.getElementById("subPeruEduca");
+            if (spe.style.display === "none" || spe.style.display === "") {
+                spe.style.display = "block";
+                document.getElementById("mainMaterials").style.display = "none";
+            } else {
+                document.getElementById("mainMaterials").style.display = "grid";
+                spe.style.display = "none";
+            }
+        });
+
+        document.getElementById("biblioteca-digital").addEventListener("click", function () {
+            let sb = document.getElementById("subBiblioteca");
+            if (sb.style.display === "none" || sb.style.display === "") {
+                sb.style.display = "block";
+                document.getElementById("mainMaterials").style.display = "none";
+            } else {
+                document.getElementById("mainMaterials").style.display = "grid";
+                sb.style.display = "none";
+            }
+        });
+
+        document.querySelectorAll(".boton-cerrar").forEach(function (element) {
+            element.addEventListener("click", function () {
+                console.log("entra aquí");
+                document.getElementById("subPeruEduca").style.display = "none";
+                document.getElementById("subBiblioteca").style.display = "none";
+                document.getElementById("mainMaterials").style.display = "grid";
+            });
+        });
+
+
+
+    </script>
+</body>
+
+</html>

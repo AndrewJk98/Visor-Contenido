@@ -1,0 +1,17 @@
+@font-face{
+    font-family: 'Moderustic';
+    src: url('./fuentes/Moderustic/Moderustic-VariableFont_wght.ttf');
+    font-weight:bold;
+    font-style:bold;
+}
+h1{
+    font-family: 'Moderustic';
+}
+
+.accordion-item{
+    cursor:pointer;
+}
+.accordion-item:hover{
+    background-color: rgba(36, 147, 112, 0.25);
+}
+
